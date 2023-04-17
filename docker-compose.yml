@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  alpaca: &alpaca
+    build:
+      context: .
+      dockerfile: ./DockerFile
+    image: alpaca-local
+    container_name: alpaca-local
+    ports:
+      - '8003:3000'
+    command: npx dalai serve
